@@ -22,6 +22,17 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//button[@class='btn btn-uppercase btn-primary pull-right']")
     public WebElement loginButton;
 
+    @FindBy(xpath = "//h2[@class='title']")
+    public WebElement loginText;
+
+    @FindBy(linkText = "Username")
+    public WebElement usernameText;
+
+    @FindBy(linkText = "Password")
+    public WebElement passwordText;
+
+
+
     public void login(String userName, String password){
         wait.until(ExpectedConditions.visibilityOf(usernameInputBox)).sendKeys(userName);
         wait.until(ExpectedConditions.visibilityOf(passwordInputBox)).sendKeys(password);
